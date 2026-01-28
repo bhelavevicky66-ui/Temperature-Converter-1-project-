@@ -1,0 +1,80 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: 0px;
+}
+body{
+    overflow: hidden;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+#div2{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+h1{
+    text-align: center;
+    padding: 2rem;
+    font-size: 3.50rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 0rem;
+}
+.contener{
+    text-align: center;
+    border:transparent;
+    border-radius: 2rem;
+    height: 12rem;
+    width: 50%;
+    padding: 8rem;
+    margin: 4rem;
+    backdrop-filter: blur(15px);
+    border: 2px solid gray;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.input{
+    display: inline-block;
+    font-size: 1.50rem;
+    font-weight: bold;
+  
+}
+#span{
+    font-size: 3rem;
+    color: red;
+    margin-left: 5px;
+    
+}
+#cel{
+    font-size: 1.70rem;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    background: transparent;
+}
+
+#far{
+     font-size: 1.70rem;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    background: transparent;
+}
+#te{
+    font-size: 4rem;
+  font-weight: 800;
+  color: #ff5722;
+}
+label{
+    font-size: 2rem;
+}
+body{
+    background-image: url(image..png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
