@@ -1,80 +1,182 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: 0px;
+:root {
+    --primary-color: #ff5722;
+    /* --bg-gradient: linear-gradient(135deg, #1e0533, #11011e); Removed dark gradient */
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    /* More visible, milky white glass */
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --text-color: #000000;
+    /* Dark text for light background */
+    --text-secondary: #333333;
+    --input-bg: rgba(255, 255, 255, 0.6);
+    /* Lighter inputs */
 }
-body{
-    overflow: hidden;
-    display: flex;
-    align-content: center;
-    justify-content: center;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    /* Keep the nice font */
 }
-#div2{
-    height: 100vh;
-    width: 100vw;
+
+body {
+    /* Background setup */
+    background-image: url('image..png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-color);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
-
+    overflow-x: hidden;
 }
-h1{
-    text-align: center;
-    padding: 2rem;
-    font-size: 3.50rem;
-    font-family: 'Times New Roman', Times, serif;
-    padding-top: 0rem;
+
+/* Removed the dark overlay (body::before) completely to show the "nature" image clearly */
+
+.main-wrapper {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
 }
-.contener{
-    text-align: center;
-    border:transparent;
-    border-radius: 2rem;
-    height: 12rem;
-    width: 50%;
-    padding: 8rem;
-    margin: 4rem;
+
+.container {
+    background: transparent;
     backdrop-filter: blur(15px);
+    /* Slightly less blur for clearer background see-through if desired, or keep high */
+    -webkit-backdrop-filter: blur(15px);
     border: 2px solid gray;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-}
-.input{
-    display: inline-block;
-    font-size: 1.50rem;
-    font-weight: bold;
-  
-}
-#span{
-    font-size: 3rem;
-    color: red;
-    margin-left: 5px;
-    
-}
-#cel{
-    font-size: 1.70rem;
-    display: inline-block;
+    border-radius: 30px;
+    /* Rounder corners like typical sleek designs */
+    padding: 9.50rem;
+    width: 100%;
+    max-width: 1000px;
+    /* Slightly wider */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    /* Soft shadow */
     text-align: center;
-    font-weight: bold;
-    background: transparent;
+    animation: fadeIn 0.8s ease-out;
+
 }
 
-#far{
-     font-size: 1.70rem;
-    display: inline-block;
-    text-align: center;
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
     font-weight: bold;
-    background: transparent;
+    /* Make sure it is bold as per image */
+    color: #000;
+    text-shadow: none;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: capitalize;
+    /* Just in case */
 }
-#te{
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: 800;
+    /* Extra bold */
     font-size: 4rem;
-  font-weight: 800;
-  color: #ff5722;
+    /* Slightly larger like a drop cap */
+    font-family: 'Times New Roman', Times, serif;
+    /* Explicitly ensure serif */
 }
-label{
-    font-size: 2rem;
+
+.converter-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 2rem;
 }
-body{
-    background-image: url(image..png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #000;
+    /* distinct black label */
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+input[type="number"] {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #999;
+    /* Defined border */
+    border-radius: 5px;
+    /* Boxy or slightly rounded */
+    padding: 10px;
+    font-size: 1.5rem;
+    color: #000;
+    text-align: center;
+    transition: all 0.3s ease;
+    outline: none;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type="number"]:focus {
+    border-color: var(--primary-color);
+    background: #fff;
+    box-shadow: 0 0 5px rgba(255, 87, 34, 0.5);
+}
+
+.equals-sign {
+    font-size: 3rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-top: 26px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem;
+        margin: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .highlight {
+        font-size: 2.8rem;
+    }
+
+    .converter-box {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .equals-sign {
+        transform: rotate(90deg);
+        /* Rotate = to look vertical or just hide it/change it */
+        margin: 0;
+        line-height: 1;
+    }
+
+    .input-group {
+        width: 100%;
+    }
 }
